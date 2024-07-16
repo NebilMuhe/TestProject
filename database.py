@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models.models import Base
+from models.post import Post
+from models.user import User
 from dotenv import load_dotenv
 import os
 
@@ -18,4 +19,5 @@ def get_db():
     finally:
         db.close()
 
-Base.metadata.create_all(bind=engine)
+User.metadata.create_all(bind=engine)
+Post.metadata.create_all(bind=engine)
