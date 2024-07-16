@@ -4,10 +4,18 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from app.models import user as models
 from app.schemas import user as schemas
+from dotenv import load_dotenv
+import os
 
-SECRET_KEY = "your_secret_key"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+
+load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(
+    os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30)
+) 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
