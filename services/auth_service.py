@@ -2,8 +2,8 @@ from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from app.models import user as models
-from app.schemas import user as schemas
+from models import user as models
+from schemas import user as schemas
 from dotenv import load_dotenv
 import os
 

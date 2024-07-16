@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.models import post as models
-from app.schemas import post as schemas
+from models import post as models
+from schemas import post as schemas
 
 def create_post(db: Session, post: schemas.PostCreate, user_id: int):
     db_post = models.Post(text=post.text, owner_id=user_id)

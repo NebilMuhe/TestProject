@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from app.database import engine, Base
-from app.routes import auth, post
+from database import engine, Base
+from routes import auth, post
 import uvicorn
 
 Base.metadata.create_all(bind=engine)
